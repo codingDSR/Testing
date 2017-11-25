@@ -18,7 +18,7 @@ function imReady() {
 }
 
 function init(){
-	var myApp = new Framework7({
+	myApp = new Framework7({
 	    modalTitle: 'Framework7',
 	    material: true,
 	});
