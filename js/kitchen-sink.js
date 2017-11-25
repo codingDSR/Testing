@@ -4,15 +4,17 @@ document.addEventListener('deviceready', imReady, false);
 function imReady() {
 	init();
     document.addEventListener("backbutton", function(e){
-        alert("hello");
         var page=myApp.getCurrentView().activePage; myApp.hidePreloader();
-        if(page.name=="home"){ 
+        if(page.name=="index"){ 
             e.preventDefault(); 
             if(confirm("Do you want to Exit!")) { 
-                navigator.app.clearHistory(); navigator.app.exitApp(); 
+                navigator.app.clearHistory(); 
+                navigator.app.exitApp(); 
             } 
         } else { 
-            navigator.app.backHistory();
+        	try { 
+            	Dom7(".back").click();
+            } catch(msg){}
         }
     }, false);
 }
